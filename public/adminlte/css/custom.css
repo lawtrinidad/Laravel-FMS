@@ -1,0 +1,33 @@
+html,
+body {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+body {
+    background: #00000052;
+}
+
+.label {
+    margin-right: 5px;
+    margin-bottom: 5px !important;
+    display: inline-block;
+}
+
+#wrapper {
+    position: relative;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #3cbcb4 !important;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #3cbcb4 !important;
+}
+
+.skin-blue .wrapper,
+.skin-blue .main-sidebar,
+.skin-blue .left-side {
+    background-color: #213e3e !important;
+}
