@@ -52,7 +52,7 @@
             @can('folder_access')
             <li class="{{ $request->segment(2) == 'folders' ? 'active' : '' }}">
                 <a href="{{ route('admin.folders.index') }}">
-                    <i class="fa fa-gears"></i>
+                    <i class="fa fa-folder"></i>
                     <span class="title">@lang('quickadmin.folders.title')</span>
                 </a>
             </li>
@@ -61,7 +61,7 @@
             @can('file_access')
             <li class="{{ $request->segment(2) == 'files' ? 'active' : '' }}">
                 <a href="{{ route('admin.files.index') }}">
-                    <i class="fa fa-gears"></i>
+                <i class=" fa fa-file"></i>
                     <span class="title">@lang('quickadmin.files.title')</span>
                 </a>
             </li>

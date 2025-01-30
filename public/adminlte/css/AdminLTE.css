@@ -1,18 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 @import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-/*!
- *   AdminLTE v2.3.8
- *   Author: Almsaeed Studio
- *	 Website: Almsaeed Studio <http://almsaeedstudio.com>
- *   License: Open source - MIT
- *           Please visit http://opensource.org/licenses/MIT for more information
-!*/
-/*
- * Core: General Layout Style
- * -------------------------
- */
 html,
 body {
   height: 100%;
@@ -170,7 +158,7 @@ h6,
 }
 /* General Links */
 a {
-  color: #3c8dbc;
+  color: #f4f4f4;
 }
 a:hover,
 a:active,
@@ -303,6 +291,7 @@ a:focus {
   padding: 0 5px;
   font-family: "Kodchasan";
   width: fit-content;
+  box-shadow: #141a1d;
 }
 .logo-lg {
   display: flex !important;
@@ -459,7 +448,7 @@ a:focus {
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: 50px;
+  padding-top: 80px;
   min-height: 100%;
   width: 230px;
   z-index: 810;
@@ -467,6 +456,7 @@ a:focus {
   -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
   -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  color: #f4f4f4 !important;
 }
 @media (max-width: 767px) {
   .main-sidebar,
@@ -565,6 +555,7 @@ a:focus {
 .sidebar-menu > li > a > .glyphicon,
 .sidebar-menu > li > a > .ion {
   width: 20px;
+  height: 24px;
 }
 .sidebar-menu > li .label,
 .sidebar-menu > li .badge {
@@ -706,8 +697,6 @@ a:focus {
   }
   .sidebar-mini.sidebar-collapse .main-header .logo > .logo-mini {
     display: block;
-    margin-left: 0;
-    margin-right: 0px;
     font-size: 18px;
     margin-top: 10px;
   }
