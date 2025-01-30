@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 /*!
  *   AdminLTE v2.3.8
  *   Author: Almsaeed Studio
@@ -13,6 +16,7 @@
 html,
 body {
   height: 100%;
+  background-color: #652331;
 }
 .layout-boxed html,
 .layout-boxed body {
@@ -194,6 +198,9 @@ a:focus {
   max-height: 100px;
   z-index: 1030;
 }
+
+
+
 .main-header .navbar {
   -webkit-transition: margin-left 0.3s ease-in-out;
   -o-transition: margin-left 0.3s ease-in-out;
@@ -253,8 +260,9 @@ a:focus {
   float: left;
   background-color: transparent;
   background-image: none;
-  padding: 15px 15px;
+  padding: 25px 15px;
   font-family: fontAwesome;
+  color: #f4f4f4;
 }
 .main-header .sidebar-toggle:before {
   content: "\f0c9";
@@ -283,28 +291,62 @@ a:focus {
   padding: 2px 3px;
   line-height: .9;
 }
+
+/* Main header styling */
 .main-header .logo {
   -webkit-transition: width 0.3s ease-in-out;
   -o-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
-  display: block;
-  float: left;
-  height: 50px;
-  font-size: 20px;
-  line-height: 50px;
-  text-align: center;
-  width: 230px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 0 15px;
-  font-weight: 300;
-  overflow: hidden;
+  display: flex;
+  height: 75px; /* Set height to 75px */
+  text-align: left;
+  padding: 0 5px;
+  font-family: "Kodchasan";
+  width: fit-content;
 }
-.main-header .logo .logo-lg {
-  display: block;
+.logo-lg {
+  display: flex !important;
+  align-items: center; /* Aligns logo and text container vertically */
+  justify-content: flex-start; /* Align items to the left */
+  height: 100%; /* Ensures that the logo container fits the height of the header */
+  text-overflow: inherit;
+  margin-left: 5px;
 }
-.main-header .logo .logo-mini {
-  display: none;
+.logo-mini{
+  margin: 5px;
 }
+
+#logo-text {
+  color: #f4f4f4;
+  display: flex;
+  align-items: top;
+  flex-direction: column; /* Stack the text vertically */
+  margin-left: 6px; /* Adds space between the logo and the text */
+  height: 60px;
+}
+
+#logo-text p {
+  margin: 0 0; /* Remove default margins */
+  font-size: 28px; /* Adjust font size for better fit */
+  height: 22px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  overflow: visible !important;
+}
+
+
+#subtitle {
+  font-size: 11px !important; /* Adjust font size of subtitle for better fit */
+  color: #f4f4f4;
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 300 !important;
+  text-shadow: none !important;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+
 .main-header .navbar-brand {
   color: #fff;
 }
@@ -664,9 +706,10 @@ a:focus {
   }
   .sidebar-mini.sidebar-collapse .main-header .logo > .logo-mini {
     display: block;
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: 0;
+    margin-right: 0px;
     font-size: 18px;
+    margin-top: 10px;
   }
   .sidebar-mini.sidebar-collapse .main-header .logo > .logo-lg {
     display: none;
@@ -920,6 +963,13 @@ a:focus {
 }
 .control-sidebar-light .control-sidebar-menu > li > a .menu-info > p {
   color: #5e5e5e;
+  
+.main-header .sidebar-toggle {
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    padding: 25px 15px !important;
+    font-family: fontAwesome;
 }
 /*
  * Component: Dropdown menus
@@ -4939,4 +4989,5 @@ table.text-center th {
   .table-responsive > .table tr td {
     white-space: normal !important;
   }
+}
 }
