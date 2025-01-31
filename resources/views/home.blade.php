@@ -10,8 +10,10 @@
                     @lang('quickadmin.qa_dashboard_text')
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="panel panel-default">
+    <div class="panel panel-default">
         <div class="panel-heading">
             @lang('quickadmin.qa_view')
         </div>
@@ -30,7 +32,16 @@
                         </tr>
                         <tr>
                             <th>@lang('quickadmin.users.fields.role')</th>
-                            <td field-key='role'>{{ $user->role->title ?? 'No Role Assigned' }}</td>
+                            <td field-key='role'>
+                            @if ($user->role_id == 1)
+                                Administrator
+                            @elseif ($user->role_id >= 2)
+                                Simple User
+                            @else
+                                Unknown
+                            @endif
+                            </td>
+
                         </tr>
                     </table>
                 </div>
@@ -49,7 +60,7 @@
     <thead>
         <tr>
             <th>@lang('quickadmin.folders.fields.name')</th>
-                        <th>@lang('quickadmin.folders.fields.created-by')</th>
+                        <th>Date Created</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -63,7 +74,7 @@
             @foreach ($folders as $folder)
                 <tr data-entry-id="{{ $folder->id }}">
                     <td field-key='name'>{{ $folder->name }}</td>
-                                <td field-key='created_by'>{{ $folder->created_by->name or '' }}</td>
+                                <td field-key='created_on'>{{ $folder->created_at->format('h:i A, M/d/Y') }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     @can('delete')
@@ -118,11 +129,10 @@
 <table class="table table-bordered table-striped {{ count($files) > 0 ? 'datatable' : '' }}">
     <thead>
         <tr>
-            <th>@lang('quickadmin.files.fields.folder')</th>
-                        <th>@lang('quickadmin.files.fields.created-by')</th>
+            <th>File Name</th>
+                        <th>Folder</th>
+                        <th>Date Created</th>
                         @if( request('show_deleted') == 1 )
-                        <th>&nbsp;</th>
-                        @else
                         <th>&nbsp;</th>
                         @endif
         </tr>
@@ -132,9 +142,13 @@
         @if (count($files) > 0)
             @foreach ($files as $file)
                 <tr data-entry-id="{{ $file->id }}">
-                    <td field-key='folder'>{{ $file->folder->name or '' }}</td>
-                                <td field-key='created_by'>{{ $file->created_by->name or '' }}</td>
-                                <td field-key='filename'>@if($file->filename)<a href="{{ asset(env('UPLOAD_PATH').'/' . $file->filename) }}" target="_blank">Download file</a>@endif</td>
+                <td field-key='filename'> @foreach($file->getMedia('filename') as $media)
+                                    <p class="form-group">
+                                        <a href="{{url('/admin/' . $file->uuid . '/download')}}" target="_blank">{{ $media->name }} ({{ $media->size }} KB)</a>
+                                    </p>
+                                @endforeach</td>
+                                <td field-key='folder'>{{ $file->folder->name }}</td>
+                                <td field-key='created_on'>{{ $file->created_at->format('h:i A, M/d/Y') }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     @can('delete')
@@ -187,6 +201,6 @@
 </div>
 </div>
 
-        </div>
-    </div>
-@endsection
+
+@stop
+

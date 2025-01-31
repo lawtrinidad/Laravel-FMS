@@ -17,7 +17,7 @@ trait FilterByUser
 
             $currentUser = Auth::user();
             if (!$currentUser) return;
-            $canSeeAllRecordsRoleId = config('quickadmin.can_see_all_records_role_id');
+            $canSeeAllRecordsRoleId = (config('quickadmin.can_see_all_records_role_id')||config('quickadmin.default_role_id'));
             $modelName = class_basename(self::class);
 
             if (!is_null($canSeeAllRecordsRoleId) && $currentUser->role_id == $canSeeAllRecordsRoleId) {

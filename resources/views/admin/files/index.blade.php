@@ -6,12 +6,8 @@
     @can('file_create')
         <p>
 
-            @if (Auth::getUser()->role_id == 2 && $userFilesCount >= 5)
-                <a href="{{ route('admin.files.create') }}" class="btn btn-success disabled">@lang('quickadmin.qa_add_new')</a>
-                <a href="{{url('/admin/subscriptions')}}" class="btn btn-primary">Upgrade plan to Premium for $9.99/month</a>
-            @else
                 <a href="{{ route('admin.files.create') }}" class="btn btn-success">@lang('quickadmin.qa_add_new')</a>
-            @endif
+
             @if(!is_null(Auth::getUser()->role_id) && config('quickadmin.can_see_all_records_role_id') == Auth::getUser()->role_id)
                 @if(Session::get('File.filter', 'all') == 'my')
                     <a href="?filter=all" class="btn btn-default">Show all records</a>
@@ -49,6 +45,8 @@
 
                     <th>Filename</th>
                     <th>Folder</th>
+                    <th>Date Created</th>
+                    <th>Created by</th>
                     @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                     @else
@@ -71,7 +69,9 @@
                                         <a href="{{url('/admin/' . $file->uuid . '/download')}}" target="_blank">{{ $media->name }} ({{ $media->size }} KB)</a>
                                     </p>
                                 @endforeach</td>
-                            <td field-key='folder'>{{ $file->folder->name or '' }}</td>
+                            <td field-key='folder'>{{ $file->folder->name }}</td>
+                            <td field-key='created_on'>{{ $file->created_at->format('h:i A, M/d/Y') }}</td>
+                            <td field-key='created_by'>{{ $file->created_by->name }}</td>
                             @if( request('show_deleted') == 1 )
                                 <td>
                                     @if (Auth::getUser()->role_id == 2 && $userFilesCount >= 5)
