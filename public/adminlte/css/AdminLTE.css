@@ -688,12 +688,13 @@ hr {
   .sidebar-mini.sidebar-collapse .content-wrapper,
   .sidebar-mini.sidebar-collapse .right-side,
   .sidebar-mini.sidebar-collapse .main-footer {
-    margin-left: 50px !important;
+    margin-left: 60px !important;
     z-index: 840;
   }
   .sidebar-mini.sidebar-collapse .sidebar-footer{
     display: none;
   }
+
 
   .sidebar-mini.sidebar-collapse .main-sidebar {
     -webkit-transform: translate(0, 0);
@@ -705,6 +706,7 @@ hr {
   }
   .sidebar-mini.sidebar-collapse .sidebar-menu > li {
     position: relative;
+    margin-left: 5px;
   }
   .sidebar-mini.sidebar-collapse .sidebar-menu > li > a {
     margin-right: 0;
@@ -797,6 +799,7 @@ hr {
   top: 50%;
   margin-top: -7px;
 }
+
 /*
  * Component: Control sidebar. By default, this is the right sidebar.
  */
