@@ -49,6 +49,9 @@
                 </ul>
             </li>
             @endcan
+
+            <hr>
+
             @can('folder_access')
             <li class="{{ $request->segment(2) == 'folders' ? 'active' : '' }}">
                 <a href="{{ route('admin.folders.index') }}">
@@ -76,6 +79,36 @@
             </li>
             @endcan --}}
 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-trash"></i>
+                    <span class="title">Trash</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                
+                <li class="{{ $request->segment(2) == 'trash-files' ? 'active active-sub' : '' }}">
+                        <a href="http://127.0.0.1:8000/admin/files?show_deleted=1">
+                            <i class="fa fa-minus"></i>
+                            <span class="title">
+                                Deleted Files
+                            </span>
+                        </a>
+                    </li>
+        
+                <li class="{{ $request->segment(2) == 'trash-folder' ? 'active active-sub' : '' }}">
+                        <a href="http://127.0.0.1:8000/admin/folders?show_deleted=1">
+                            <i class="fa fa-eraser"></i>
+                            <span class="title">
+                               Deleted Folders
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">
@@ -92,5 +125,15 @@
             </li>
         </ul>
     </section>
+
+    <div class="sidebar-footer">
+        <p>
+            By using this service, you understood and agree to the 
+            PUP Online Services 
+            <a href="#" class="sidebar-link">Terms of Use</a> 
+            and 
+            <a href="#" class="sidebar-link">Privacy Statement</a>.
+        </p>
+    </div>
 </aside>
 
