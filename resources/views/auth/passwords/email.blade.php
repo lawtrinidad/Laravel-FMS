@@ -2,9 +2,26 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset password</div>
+        <div class="col-md-12">
+            <div class="panel panel-default frost-reset"
+
+            >
+
+                <div class="text-center logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="img-circle logo" width="80" height="80">
+
+                    <div class="text-center">
+                        <div class="text-block text-black">
+                            <p class="text-sintax-reset">SINTAx</p>
+                        </div>
+                            <p class="text-sinta-reset">Sintang paaralan Information Network for
+                            <br> Transfer and Archiving of Exchangeable files
+                        </p>
+                    </div>     
+                </div>
+
+                <label class="col-md-4 control-label" style="display: block; white-space: nowrap;">Reset password</label>
+
                 <div class="panel-body">
 
                     @if (session('status'))
@@ -34,20 +51,19 @@
                                value="{{ csrf_token() }}">
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">Email</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input type="email"
                                        class="form-control"
                                        name="email"
-                                       value="{{ old('email') }}">
+                                       value="{{ old('email') }}"
+                                       placeholder="@lang('quickadmin.qa_email')">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col-md-12">
                                 <button type="submit"
-                                        class="btn btn-primary"
+                                        class="btn btn-custom btn-primary"
                                         style="margin-right: 15px;">
                                     Reset password
                                 </button>

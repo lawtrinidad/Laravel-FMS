@@ -21,7 +21,6 @@
         }
         .frost{
             min-height: 100vh;
-            min-width: 520px !important;
             padding: 6vh 0 0 0;
             overflow: auto !important;
             box-shadow: none !important;
@@ -130,7 +129,33 @@
             margin: 0;
 
         }
-
+        .frost-reset{
+            box-shadow: none !important;
+            margin: 0 !important;
+            border-radius: 10px !important;
+            background: #D9D9D9CF;
+            -webkit-backdrop-filter: blur(20px) saturate(168%);
+            backdrop-filter: blur(20px) saturate(168%);
+            box-shadow: -10px 0 20px rgba(0, 0, 0, 0.51) !important; 
+            backdrop-filter: blur(15x);
+            padding: 1.5rem !important;
+        }
+        .text-sintax-reset{
+            font-family: "Kodchasan";
+            font-size: 35px !important;
+            font-weight: bold;
+            line-height: 55px !important;
+        }
+        .text-sinta-reset{
+            color: #742F2F;
+            font-size: 14px !important;
+            font-family: Inter;
+            font-style: italic;
+            font-weight: 300 !important;
+            text-shadow: none !important;
+            display: block;
+            padding-bottom: 1rem !important;
+        }
     
     </style>
 </head>
@@ -139,7 +164,7 @@
 
 
 
-    <div class="container-fluid h-100">
+    <div class="container-fluid h-100" style="display: flex; align-items: center;">
         @yield('content')
     </div>
 
