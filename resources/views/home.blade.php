@@ -134,8 +134,6 @@
                         <th>Date Created</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
-                        @else
-                        <th>&nbsp;</th>
                         @endif
         </tr>
     </thead>
