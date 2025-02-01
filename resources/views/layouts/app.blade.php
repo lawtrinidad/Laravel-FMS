@@ -8,7 +8,7 @@
 
 <body id="body" class="hold-transition sidebar-mini">
 
-<div id="wrapper">
+<div id="wrapper" class="h-75px">
 
 @include('partials.topbar')
 @include('partials.sidebar')
