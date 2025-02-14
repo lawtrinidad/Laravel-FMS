@@ -15,11 +15,9 @@
                             <span class="text-welcome">Welcome to</span>
                         </div>
                         <div class="text-block text-black">
-                            <p class="text-sintax">SINTAx</p>
+                            <p class="text-sintax">IskoLAr</p>
                         </div>
-                            <p class="text-sinta">Sintang paaralan Information Network for Transfer
-                            and Archiving of Exchangeable files
-                        </p>
+                            <p class="text-sinta">Iskolar Library and Archive</p>
                     </div>     
                 </div>
 
