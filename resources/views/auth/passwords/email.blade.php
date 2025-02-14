@@ -69,6 +69,13 @@
                                 </button>
                             </div>
                         </div>
+
+                        <div class="form-group text-center top">
+                            <div class="col-md-12">
+                                <span>Remember your password? </span>
+                                <a href="{{ url('/admin/home') }}" style="text-decoration: underline; color: #742F2F;">Sign In</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
