@@ -12,11 +12,9 @@
 
                     <div class="text-center">
                         <div class="text-block text-black">
-                            <p class="text-sintax-reset">SINTAx</p>
+                            <p class="text-sintax-reset margin-top">IskoLAr</p>
                         </div>
-                            <p class="text-sinta-reset">Sintang paaralan Information Network for
-                            <br> Transfer and Archiving of Exchangeable files
-                        </p>
+                            <p class="text-sinta-reset">Iskolar Library and Archive</p>
                     </div>     
                 </div>
 
