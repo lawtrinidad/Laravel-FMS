@@ -23,15 +23,18 @@ class LoginController extends Controller
   
     protected function credentials(Request $request)
     {
+        $allowedDomains = ['iskolarngbayan.pup.edu.ph', 'pup.edu.ph']; // List of allowed domains
+    
         $request->validate([
-            'email' => ['required', 'email', function ($attribute, $value, $fail) {
-                if (!str_ends_with($value, '@iskolarngbayan.pup.edu.ph')) {
-                    $fail('Only PUP webmail are allowed.');
+            'email' => ['required', 'email', function ($attribute, $value, $fail) use ($allowedDomains) {
+                $domain = substr(strrchr($value, "@"), 1); // Extract domain from email
+                if (!in_array($domain, $allowedDomains)) {
+                    $fail('Only PUP webmail addresses are allowed.');
                 }
             }],
             'password' => 'required',
         ]);
-
+    
         return $request->only('email', 'password');
     }
 }
