@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid h-100 w-100">
 
-<div class="row h-100 w-100" style="justify-content:center; display:flex ;align-items: flex-end" id="login-box">
+<div class="row h-100 w-100" style="justify-content:center; display:flex ;align-items: flex-end" id="landing-box">
     <div class="col-md-4 frost h-100 col-10 mx-auto ">
         <div class="panel-1">
             <div class="panel-body">
