@@ -81,7 +81,7 @@
                             <button type="submit"
                                     class="btn btn-custom btn-primary"
                                     style="margin-right: 15px;">
-                                SIGN IN
+                                Sign In
                             </button>
                         </div>
                     </div>
