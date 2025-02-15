@@ -93,6 +93,19 @@
                         </div>
                     </div>
 
+                    <div class="form-group text-center top">
+                        <div class="col-md-12">
+                            <span>
+                            <input type="checkbox" name="agree_terms" required>  
+                                I have read and agree to the 
+                                <a href="#" 
+                                data-toggle="modal"
+                                data-target=".bd-example-modal-lg" 
+                                data-bs-target="#termsModal"
+                                style="text-decoration: underline; color:rgb(16, 50, 97);">Terms and Conditions</a>.
+                            </span>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
