@@ -8,7 +8,7 @@
                     <div class="modal-body">
                         <!-- Insert your Terms and Conditions content here -->
                         <p>
-                        <i>Last Updated: February 15, 2024</i>
+                        <i>Last Updated: February 15, 2025</i>
 
                         <br><br>
                         Welcome to <b>IskoLAr (Iskolar Library and Archive)</b>,                        
