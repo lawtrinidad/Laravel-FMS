@@ -121,7 +121,7 @@
             position: relative;
         }
         #background{
-            background: url('{{ asset('images/pup-main.jpg') }}') no-repeat center center scroll;
+            background: url('{{ asset('images/pup-main-future.jpg') }}') no-repeat center center scroll;
             background-size: cover;
             height: 100vh;
             display: flex;
