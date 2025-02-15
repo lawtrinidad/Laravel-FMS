@@ -178,5 +178,7 @@
 
     @include('partials.javascripts')
 
+    @include('partials.modal')
+
 </body>
 </html>
