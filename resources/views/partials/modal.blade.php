@@ -98,7 +98,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-custom btn-secondary" data-dismiss="modal">CLOSE</button>
+                        <button type="button" class="btn btn-custom btn-secondary" data-dismiss="modal">Close</button>
                     </div>
             </div>
         </div>
