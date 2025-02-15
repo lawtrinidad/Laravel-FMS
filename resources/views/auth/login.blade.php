@@ -42,12 +42,17 @@
                         value="{{ csrf_token() }}">
 
                     <div class="form-group">
-                        <div class="col-md-12">
+                        <div class="col-md-12 d-inline-block">
                             <input type="email"
                                 class="form-control"
                                 name="email"
                                 value="{{ old('email') }}"
-                                placeholder="@lang('quickadmin.qa_email')">
+                                placeholder="@lang('quickadmin.qa_email')"
+
+                                tabindex="0"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Only PUP webmail are allowed.">
                         </div>
                     </div>
 
