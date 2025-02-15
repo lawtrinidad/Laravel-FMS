@@ -58,7 +58,11 @@
                                     value="{{ old('email') }}" 
                                     placeholder="@lang('quickadmin.qa_email')"
     
-                                    required>
+                                    required
+                                    tabindex="0"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Only PUP webmail are allowed.">
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
