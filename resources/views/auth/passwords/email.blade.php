@@ -1,26 +1,29 @@
 @extends('layouts.auth')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default frost-reset"
+<div class="container-fluid h-100 w-100">
 
-            >
-
-                <div class="text-center logo">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="img-circle logo" width="80" height="80">
-
-                    <div class="text-center">
-                        <div class="text-block text-black">
-                            <p class="text-sintax-reset margin-top">IskoLAr</p>
-                        </div>
-                            <p class="text-sinta-reset">Iskolar Library and Archive</p>
-                    </div>     
-                </div>
-
-                <label class="col-md-4 control-label" style="display: block; white-space: nowrap;">Reset password</label>
-
+    <div class="row h-100 w-100" style="justify-content:center; display:flex ;align-items: flex-end" id="login-box">
+        <div class="col-md-4 frost h-100 col-10 mx-auto">
+            <div class="panel-1">
                 <div class="panel-body">
+                    <div class="text-center logo">
+                        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="img-circle logo" width="120" height="120">
+
+                        <div class="text-center">
+                            <div class="text-block text-black">
+                                <span class="text-welcome">Welcome to</span>
+                            </div>
+                            <div class="text-block text-black">
+                                <p class="text-sintax">IskoLAr</p>
+                            </div>
+                                <p class="text-sinta">Iskolar Library and Archive</p>
+                        </div>     
+                    </div>
+
+                    <label class="control-label" 
+                    style="display: block; white-space: nowrap;">Reset Password</label>
+
 
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -41,20 +44,20 @@
                     @endif
 
                     <form class="form-horizontal"
-                          role="form"
-                          method="POST"
-                          action="{{ url('password/email') }}">
+                        role="form"
+                        method="POST"
+                        action="{{ url('password/email') }}">
                         <input type="hidden"
-                               name="_token"
-                               value="{{ csrf_token() }}">
+                            name="_token"
+                            value="{{ csrf_token() }}">
 
                         <div class="form-group">
                             <div class="col-md-12">
                                 <input type="email"
-                                       class="form-control"
-                                       name="email"
-                                       value="{{ old('email') }}"
-                                       placeholder="@lang('quickadmin.qa_email')">
+                                    class="form-control"
+                                    name="email"
+                                    value="{{ old('email') }}"
+                                    placeholder="@lang('quickadmin.qa_email')">
                             </div>
                         </div>
 
@@ -63,7 +66,7 @@
                                 <button type="submit"
                                         class="btn btn-custom btn-primary"
                                         style="margin-right: 15px;">
-                                    Reset password
+                                    Submit
                                 </button>
                             </div>
                         </div>
@@ -79,4 +82,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
