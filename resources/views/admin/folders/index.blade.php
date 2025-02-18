@@ -39,7 +39,7 @@
                 <tr>
                     @can('folder_delete')
                         @if ( request('show_deleted') != 1 )
-                            <th style="text-align:center;"><input type="checkbox" id="select-all"/></th>@endif
+                            <th style="width: 50px; text-align:center;"><input type="checkbox" id="select-all"/></th>@endif
                     @endcan
 
                     <th>@lang('quickadmin.folders.fields.name')</th>
