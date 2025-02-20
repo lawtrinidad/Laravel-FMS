@@ -27,10 +27,11 @@
                     </table>
                 </div>
             </div><!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#folders" aria-controls="folders" role="tab" data-toggle="tab">Folders</a></li>
-                <li role="presentation" class=""><a href="#files" aria-controls="files" role="tab" data-toggle="tab">Files</a></li>
-            </ul>
+<ul class="nav nav-tabs" role="tablist">
+    
+<li role="presentation" class="active"><a href="#folders" aria-controls="folders" role="tab" data-toggle="tab">Folders</a></li>
+<li role="presentation" class=""><a href="#files" aria-controls="files" role="tab" data-toggle="tab">Files</a></li>
+</ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
@@ -56,9 +57,44 @@
                     <td field-key='name'>{{ $folder->name }}</td>
                                 <td field-key='created_on'>{{ $folder->created_at->format('h:i A, M/d/Y') }}</td>
                                 @if( request('show_deleted') == 1 )
-                                    <th>&nbsp;</th>
+                                <td>
+                                    @can('delete')
+                                                                        {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'POST',
+                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                        'route' => ['folders.restore', $folder->id])) !!}
+                                    {!! Form::submit(trans('quickadmin.qa_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                                    {!! Form::close() !!}
+                                @endcan
+                                    @can('delete')
+                                                                        {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                        'route' => ['folders.perma_del', $folder->id])) !!}
+                                    {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                @endcan
+                                </td>
                                 @else
-                                    <th>&nbsp;</th>
+                                <td>
+                                    @can('view')
+                                    <a href="{{ route('folders.show',[$folder->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
+                                    @endcan
+                                    @can('edit')
+                                    <a href="{{ route('folders.edit',[$folder->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                    @endcan
+                                    @can('delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                        'route' => ['folders.destroy', $folder->id])) !!}
+                                    {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
                                 @endif
                 </tr>
             @endforeach
@@ -97,71 +133,56 @@
                                 <td field-key='folder'>{{ $file->folder->name }}</td>
                                 <td field-key='created_on'>{{ $file->created_at->format('h:i A, M/d/Y') }}</td>
                                 @if( request('show_deleted') == 1 )
-                                    <th>&nbsp;</th>
+                                <td>
+                                    @can('delete')
+                                                                        {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'POST',
+                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                        'route' => ['files.restore', $file->id])) !!}
+                                    {!! Form::submit(trans('quickadmin.qa_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                                    {!! Form::close() !!}
+                                @endcan
+                                    @can('delete')
+                                                                        {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                        'route' => ['files.perma_del', $file->id])) !!}
+                                    {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                @endcan
+                                </td>
                                 @else
-                                    <th>&nbsp;</th>
+                                <td>
+                                    @can('view')
+                                    <a href="{{ route('files.show',[$file->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
+                                    @endcan
+                                    @can('edit')
+                                    <a href="{{ route('files.edit',[$file->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                    @endcan
+                                    @can('delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                        'route' => ['files.destroy', $file->id])) !!}
+                                    {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
                                 @endif
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @if (count($files) > 0)
-                                @foreach ($files as $file)
-                                    <tr data-entry-id="{{ $file->id }}">
-                                        <td field-key='folder'>{{ $file->folder->name or '' }}</td>
-                                        <td field-key='created_by'>{{ $file->created_by->name or '' }}</td>
-                                        <td field-key='filename'>@if($file->filename)<a href="{{ asset(env('UPLOAD_PATH').'/' . $file->filename) }}" target="_blank">Download file</a>@endif</td>
-                                        @if( request('show_deleted') == 1 )
-                                            <td>
-                                                @can('delete')
-                                                    {!! Form::open(array(
-                                                        'style' => 'display: inline-block;',
-                                                        'method' => 'POST',
-                                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-                                                        'route' => ['files.restore', $file->id])) !!}
-                                                    {!! Form::submit(trans('quickadmin.qa_restore'), array('class' => 'btn btn-xs btn-yellow')) !!}
-                                                    {!! Form::close() !!}
-                                                @endcan
-                                                @can('delete')
-                                                    {!! Form::open(array(
-                                                        'style' => 'display: inline-block;',
-                                                        'method' => 'DELETE',
-                                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-                                                        'route' => ['files.perma_del', $file->id])) !!}
-                                                    {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-maroon')) !!}
-                                                    {!! Form::close() !!}
-                                                @endcan
-                                            </td>
-                                        @else
-                                            <td>
-                                                @can('view')
-                                                    <a href="{{ route('files.show',[$file->id]) }}" class="btn btn-xs btn-yellow">@lang('quickadmin.qa_view')</a>
-                                                @endcan
-                                                @can('edit')
-                                                    <a href="{{ route('files.edit',[$file->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
-                                                @endcan
-                                                @can('delete')
-                                                    {!! Form::open(array(
-                                                        'style' => 'display: inline-block;',
-                                                        'method' => 'DELETE',
-                                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-                                                        'route' => ['files.destroy', $file->id])) !!}
-                                                    {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-maroon')) !!}
-                                                    {!! Form::close() !!}
-                                                @endcan
-                                            </td>
-                                        @endif
-                                    </tr>
-                                @endforeach
-                            @else
-                                <tr>
-                                    <td colspan="9">@lang('quickadmin.qa_no_entries_in_table')</td>
-                                </tr>
-                            @endif
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="9">@lang('quickadmin.qa_no_entries_in_table')</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
+</div>
 
             <p>&nbsp;</p>
 
