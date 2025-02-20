@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterController extends Controller
 {
@@ -49,7 +50,17 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => [
+                'required',
+                'email',
+                'max:255',
+                'unique:users',
+                function ($attribute, $value, $fail) {
+                    if (!preg_match('/^[\w\.-]+@(iskolarngbayan\.pup\.edu\.ph|pup\.edu\.ph)$/', $value)) {
+                        $fail('The email must be a valid PUP webmail address.');
+                    }
+                },
+            ],
             'password' => 'required|min:6|confirmed',
         ]);
     }
