@@ -47,6 +47,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/spatie/media/remove', 'Admin\SpatieMediaController@destroy')->name('media.remove');
     Route::get('/about', 'Admin\InfoController@about')->name('about');
     Route::get('/user-manual', 'Admin\InfoController@userManual')->name('user-manual');
+    Route::get('/about', 'Admin\AboutController@about')->name('about');
+
+
+
+
 
 
 
