@@ -2,6 +2,10 @@
 
 Route::get('/', function () { return redirect('/admin/home'); });
 
+// Public Routes
+Route::get('/about', 'PageController@about')->name('about');
+Route::get('/user-manual', 'PageController@userManual')->name('user-manual');
+
 // Authentication Routes...
 $this->router->get('login', 'Auth\LoginController@showLoginForm')->name('auth.login');
 $this->router->post('login', 'Auth\LoginController@login')->name('auth.login');
@@ -17,7 +21,7 @@ $this->router->post('password/email', 'Auth\ForgotPasswordController@sendResetLi
 $this->router->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 $this->router->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.password.reset');
 
-// Registration Routes..
+// Registration Routes...
 $this->router->get('register', 'Auth\RegisterController@showRegistrationForm')->name('auth.register');
 $this->router->post('register', 'Auth\RegisterController@register')->name('auth.register');
 
@@ -41,8 +45,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::delete('files_perma_del/{id}', ['uses' => 'Admin\FilesController@perma_del', 'as' => 'files.perma_del']);
     Route::post('/spatie/media/upload', 'Admin\SpatieMediaController@create')->name('media.upload');
     Route::post('/spatie/media/remove', 'Admin\SpatieMediaController@destroy')->name('media.remove');
+    Route::get('/about', 'Admin\InfoController@about')->name('about');
+    Route::get('/user-manual', 'Admin\InfoController@userManual')->name('user-manual');
 
 
 
- 
 });
