@@ -92,7 +92,7 @@ class FilesController extends Controller
                 'max:102400',
                 function ($attribute, $value, $fail) {
                     if (!preg_match('/^[a-zA-Z0-9_-]+\.[a-zA-Z0-9]+$/', $value->getClientOriginalName())) {
-                        $fail('The filename must only contain letters, numbers, dashes, and underscores, followed by a valid extension.');
+                        $fail('The filename must only contain letters, numbers, dash, and underscores, followed by a valid extension.');
                     }
                 }
             ],
