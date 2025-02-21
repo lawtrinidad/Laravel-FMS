@@ -45,9 +45,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::delete('files_perma_del/{id}', ['uses' => 'Admin\FilesController@perma_del', 'as' => 'files.perma_del']);
     Route::post('/spatie/media/upload', 'Admin\SpatieMediaController@create')->name('media.upload');
     Route::post('/spatie/media/remove', 'Admin\SpatieMediaController@destroy')->name('media.remove');
-    Route::get('/about', 'Admin\InfoController@about')->name('about');
     Route::get('/user-manual', 'Admin\InfoController@userManual')->name('user-manual');
     Route::get('/about', 'Admin\AboutController@about')->name('about');
+    
 
 
 

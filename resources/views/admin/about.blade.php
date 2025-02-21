@@ -1,47 +1,85 @@
-@extends('layouts.app') {{-- Extend your main layout --}}
-
-@section('title', 'About IskoLAr') {{-- Set the page title --}}
+@extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8 max-w-4xl">
-    <!-- About Section -->
-    <h1 class="text-3xl font-bold border-b-2 pb-2 mb-4">About</h1>
+    <div class="content-container" style="height: 100vh; overflow-y: auto; padding-right: 15px;">
+        <div class="container mt-5" style="font-family: 'Raleway', sans-serif;">
+            <!-- About Section -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold">About IskoLAr</h2>
+            </div>
+            <hr style="height: 2px; background-color: gray; width: 100%">
 
-    <div class="flex flex-col md:flex-row gap-6">
-        <div class="w-full md:w-1/2">
-            <img src="{{ asset('images/pup_building.png') }}" alt="PUP Building" class="rounded-lg shadow-md">
-        </div>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="{{ asset('images/about.png') }}" alt="PUP Building" class="aboutpic">
+                </div>
+                <div class="col-md-6" id="Iskoliosis">
+                    <h3 class="fw-bold text-primary">The Future of File Sharing at PUP</h3>
+                    <p class="text-muted">
+                        <strong>IskoLAr</strong> (Iskolar Library and Archive) is a secure file repository system developed exclusively for the Polytechnic University of the Philippines (PUP) administration. Designed to streamline document management, IskoLAr provides a centralized platform for storing, organizing, and accessing institutional records, research archives, and administrative files. With robust security features and efficient categorization, it ensures data integrity, quick retrieval, and seamless collaboration among university staff. By enhancing digital record-keeping, IskoLAr supports PUP’s commitment to efficiency, organization, and academic excellence.
+                    </p>
+                </div>
+            </div>
 
-        <div class="w-full md:w-1/2">
-            <h2 class="text-xl font-bold">THE FUTURE OF FILE SHARING AT PUP</h2>
-            <p class="text-gray-700 mt-2">
-                <strong>IskoLAr</strong> (Iskolar Library and Archive) is a secure file repository system developed exclusively for the Polytechnic University of the Philippines (PUP) administration. 
-                Designed to streamline document management, IskoLAr provides a centralized platform for storing, organizing, and accessing institutional records, research archives, and administrative files.
+            <!-- Meet the Creators Section -->
+            <div class="mt-5 text-center">
+                <h3 class="fw-bold">Meet the Creators</h3>
+                <p class="text-muted">A dedicated team improving digital record management for PUP.</p>
+            </div>
+
+            <!-- Scrollable Creators Container -->
+            <div class="mt-4 d-flex flex-wrap justify-content-center gap-4 overflow-auto p-3 border rounded" style="max-height: 350px;">
+                @foreach($creators as $creator)
+                    <div class="card shadow-sm rounded text-center p-3" style="width: 220px; font-family: 'Raleway', sans-serif;">
+                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 70px; height: 70px;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h5 class="mt-3 fw-bold">{{ $creator['name'] }}</h5>
+                        <p class="text-muted">{{ $creator['role'] ?? 'Contributor' }}</p>
+                    </div>
+                @endforeach
+            </div>
+
+            <p class="mt-4 text-center text-muted">
+                Together, we built IskoLAr to enhance administrative efficiency and provide a reliable digital repository for PUP.
             </p>
         </div>
     </div>
 
-    <!-- Scrollable Creators Section -->
-    <div class="mt-8">
-        <h2 class="text-xl font-bold text-center">MEET THE CREATORS</h2>
-        <p class="text-center text-gray-600">A team dedicated to improving digital record management for PUP.</p>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
 
-        <!-- Scrollable Container -->
-        <div class="mt-6 overflow-y-auto max-h-60 border rounded-lg p-4 bg-gray-50">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-                @foreach($creators as $creator)
-                <div>
-                    <div class="w-20 h-20 bg-gray-300 rounded-full mx-auto"></div>
-                    <p class="font-semibold mt-2">{{ $creator['name'] }}</p>
-                    <p class="text-sm text-gray-500">{{ $creator['role'] ?? 'No Role' }}</p>
-                </div>
-                @endforeach
-            </div>
-        </div>
+        html, body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Raleway', sans-serif;
+        }
 
-        <p class="mt-4 text-center text-gray-600">
-            Together, we built IskoLAr to enhance administrative efficiency and provide a reliable digital repository for PUP.
-        </p>
-    </div>
-</div>
+        .card {
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .aboutpic {
+            width:90%;
+            margin-left: 10%;
+        }
+
+        /* Ensure only content inside the main section is scrollable */
+        .content-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        #Iskoliosis{
+            margin-top: 50%;
+        }
+    </style>
 @endsection
