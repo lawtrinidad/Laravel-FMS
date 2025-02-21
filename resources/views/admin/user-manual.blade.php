@@ -30,12 +30,13 @@
 
         <!-- Centered Image -->
         <div class="mt-6 text-center">
-            <img src="{{ asset('images/user-manual.png') }}" 
+            <img src="{{ asset('images/dashboard.png') }}" 
                  alt="User Manual" 
                  class="rounded-lg shadow-md object-contain"
                  style="width: 800px; height: auto;">
-        </div>
-        <br>
+            </div>
+            <br>
+
 
         <!-- Features List -->
         <div class="mt-8">
@@ -61,6 +62,13 @@
             <p class="text-gray-700 mt-2 max-w-2xl text-left">
                 The system includes predefined roles like <strong>Admin</strong> and <strong>User</strong>. However, Admin users can also create additional custom roles as needed.
             </p>
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/rolesusers.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 400px; height: auto;">
+        </div>
+        <br>
 
             <ul class="mt-6 space-y-2 text-gray-800 text-left">
                 <span class="font-bold text-xl mr-2">①</span> <strong>View All Roles</strong>: List all roles within the system, including Admin and User. <br>
@@ -75,8 +83,29 @@
 
             <ul class="mt-6 space-y-2 text-gray-800 text-left">
                 <span class="font-bold text-xl mr-2">⑤</span> <strong>View Role</strong>: View detailed information about a specific role. <br>
+                <div class="mt-6 text-center">
+            <img src="{{ asset('images/roles-view.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
                 <span class="font-bold text-xl mr-2">⑥</span> <strong>Edit Role</strong>: Modify the permissions of a role as necessary.<br>
-                <span class="font-bold text-xl mr-2">⑦</span> <strong>Delete Role</strong>: Remove the role from the system permanently.<br>
+                <div class="mt-6 text-center">
+            <img src="{{ asset('images/roles-edit.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
+                <span class="font-bold text-xl mr-2">⑦</span> <strong>Delete Role</strong>: Remove the role from the system permanently. A confirmation modal will appear before proceeding.<br>
+                <div class="mt-6 text-center">
+            <img src="{{ asset('images/roles-delete.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 500px; height: auto;">
+            </div>
+            <br>
             </ul>
         </div>
 
@@ -85,7 +114,13 @@
             <p class="text-gray-700 mt-4 max-w-2xl text-left">
                 The <strong><em>User Management</em></strong> section allows Admins to track, modify, and manage user roles directly from this page.
             </p>
-
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/users.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
             <ul class="mt-6 space-y-2 text-gray-800 text-left">
                 <span class="font-bold text-xl mr-2">①</span> <strong>Total Users </strong>: Display the total number of users in the system. <br>
                 <span class="font-bold text-xl mr-2">②</span>  <strong>Add New User </strong>: Admin can add new users using the  <strong>Add New </strong> button.<br>
@@ -111,12 +146,47 @@
             In the  <strong><em>Folders</em> </strong> section, you can navigate through different folders that help in organizing your files.
             You can create, view, edit, and delete folders as needed to maintain an organized structure for your files.
         </p>
+        <div class="mt-6 text-center">
+            <img src="{{ asset('images/folder.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 700px; height: auto;">
+            </div>
+            <br>
 
         <ul class="mt-6 space-y-2 text-gray-800 text-left">
             <span class="font-bold text-xl mr-2">①</span>  <strong>Search Folder </strong>: Quickly search for folders by name to find the one you're looking for.<br>
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/Folder search.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 450px; height: auto;">
+            </div>
+            <br>
             <span class="font-bold text-xl mr-2">②</span>  <strong>Edit Folder</strong>: If needed, you can rename a folder using the <strong>Edit</strong> function.<br>
-            <span class="font-bold text-xl mr-2">③</span>  <strong>Delete Folder</strong>: If a folder is no longer needed, you can delete it permanently.<br>
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/folder edit.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 450px; height: auto;">
+            </div>
+            <br>
+            <span class="font-bold text-xl mr-2">③</span>  <strong>Delete Folder</strong>: If a folder is no longer needed, you can delete it permanently. A confirmation modal will appear before proceeding.<br><br>
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/folder delete.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 450px; height: auto;">
+            </div>
+            <br>
             <span class="font-bold text-xl mr-2">④</span>  <strong>Add New Folder</strong>: Click on the <strong>Add New</strong> button to create a new folder for more organized archiving.<br>
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/folder add.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 250px; height: auto;">
+            </div>
+            <br>
         </ul>
         
         <p class="mt-6 font-semibold text-left"><strong>Folder Management > Search > Edit > Delete > Add New Folder</strong></p>
@@ -129,8 +199,32 @@
 
         <ul class="mt-6 space-y-2 text-gray-800 text-left">
             <span class="font-bold text-xl mr-2">①</span> <strong>View Files</strong>: The list of all uploaded files is displayed with their filename, folder, date, and the user who uploaded them.<br>
+                        <div class="mt-6 text-center">
+            <img src="{{ asset('images/files1.JPG') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
+        </ul>
             <span class="font-bold text-xl mr-2">②</span> <strong>Add New File</strong>: Use the <strong>Add New</strong> button to upload a new file to the system.<br>
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/files2.JPG') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 700px; height: auto;">
+            </div>
+            <br>
+        </ul>
             <span class="font-bold text-xl mr-2">③</span> <strong>Delete File</strong>: Select files and use the <strong>Delete</strong> button to remove them. You can delete multiple files at once.<br>
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/files3.JPG') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
+        </ul>
             <span class="font-bold text-xl mr-2">④</span> <strong>Download File</strong>: Download files locally to your device when necessary.<br>
             <span class="font-bold text-xl mr-2">⑤</span> <strong>Show Entries</strong>: Modify the number of files displayed by selecting the number of entries you wish to see per page.<br>
         </ul>
@@ -144,6 +238,13 @@
         </p>
 
         <ul class="mt-6 space-y-2 text-gray-800 text-left">
+        <div class="mt-6 text-center">
+            <img src="{{ asset('images/TRASH1.JPG') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
             <span class="font-bold text-xl mr-2">①</span> <strong>Deleted Files</strong>: View files that have been deleted. You can restore them if needed.<br>
             <span class="font-bold text-xl mr-2">②</span> <strong>Deleted Folders</strong>: View folders that have been deleted. You can restore them if needed.<br>
             <span class="font-bold text-xl mr-2">③</span> <strong>Restore</strong>: If a file or folder was deleted by accident, you can restore it back to its original location.<br>
@@ -157,6 +258,13 @@
 
         <!-- Subsection 1: About -->
         <h3 class="text-lg font-semibold text-left mt-4"><strong>1. About</strong></h3>
+        <div class="mt-6 text-center">
+            <img src="{{ asset('images/about about.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
         <p class="text-gray-700 mt-4 max-w-2xl text-left">
         <strong><em>IskoLAr</em></strong> is a system designed to help the PUP (Polytechnic University of the Philippines) community in managing their files, folders, and secure information efficiently. The platform aims to simplify archiving, organizing, and retrieving important files for students, faculty, and staff alike.
             <br><br>
@@ -166,6 +274,13 @@
         <p class="text-gray-700 mt-4 max-w-2xl text-left">
             The <strong>IskoLAr</strong> system was created by a team of dedicated students and professionals who worked together to bring this idea to life. Each member has contributed their unique skills to ensure the system meets the needs of the PUP community.
             <br><br>
+            <div class="mt-6 text-center">
+            <img src="{{ asset('images/about creators.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
             <strong>Project Creators and Roles:</strong>
             <ul class="list-disc ml-6">
                 <li><span class="font-semibold"><strong>John Lawrence Trinidad</strong></span> - Project Manager/ Full-Stack Web Developer</li>
@@ -189,6 +304,14 @@
         <p class="text-gray-700 mt-4 max-w-2xl text-left">
             For security purposes, it's important to regularly change your password to ensure your account remains secure. In this section, you can easily change your password following these steps:
         </p>
+        <div class="mt-6 text-center">
+            <img src="{{ asset('images/changepass.png') }}" 
+                 alt="User Manual" 
+                 class="rounded-lg shadow-md object-contain"
+                 style="width: 800px; height: auto;">
+            </div>
+            <br>
+        </ul>
         <ul class="mt-6 space-y-2 text-gray-800 text-left">
             <span class="font-bold text-xl mr-2">①</span> <strong>Input Current Password</strong>: Enter your current password to verify your identity. <br>
             <span class="font-bold text-xl mr-2">②</span> <strong>Input New Password</strong>: Create a new password that is strong and unique. <br>
