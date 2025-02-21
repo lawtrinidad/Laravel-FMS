@@ -85,6 +85,19 @@ class FilesController extends Controller
             return abort(401);
         }
         
+            $request->validate([
+                'file' => [
+                'required',
+                'file',
+                'max:102400',
+                function ($attribute, $value, $fail) {
+                    if (!preg_match('/^[a-zA-Z0-9_-]+\.[a-zA-Z0-9]+$/', $value->getClientOriginalName())) {
+                        $fail('The filename must only contain letters, numbers, dashes, and underscores, followed by a valid extension.');
+                    }
+                }
+            ],
+        ]);
+
             $request = $this->saveFiles($request);
 
             $data = $request->all();
@@ -106,7 +119,7 @@ class FilesController extends Controller
                 $file->model_id = $file->id;
                 $file->save();
             }
-            return redirect()->route('admin.files.index');
+            return redirect()->route('admin.files.index')->with('success', 'File uploaded successfully.');
 
     }
 
