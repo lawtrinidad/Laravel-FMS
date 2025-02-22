@@ -94,9 +94,9 @@
                         },
                         body: JSON.stringify({ ids: selectedIds })
                     }).then(response => response.json())
-                      .then(data => {
+                    .then(data => {
                           location.reload(); // Reload the page after deletion
-                      });
+                    });
                 }
             }
         });
@@ -114,7 +114,7 @@
                 background-color: white; /* Set background color to white */
                 border-left: 30px solid #652331; /* Extend left border to cover the checkbox */
                 color: black; /* Set text color to black */
-                height: 100px; /* Set a slimmer height for folder card */
+                height: 80px; /* Set a slimmer height for folder card */
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
