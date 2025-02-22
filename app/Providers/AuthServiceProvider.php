@@ -72,13 +72,13 @@ class AuthServiceProvider extends ServiceProvider
             return in_array($user->role_id, [1, 2, 3]);
         });
         Gate::define('folder_edit', function ($user) {
-            return in_array($user->role_id, [1, 2, 3]);
+            return in_array($user->role_id, [1,2]);
         });
         Gate::define('folder_view', function ($user) {
             return in_array($user->role_id, [1, 2, 3]);
         });
         Gate::define('folder_delete', function ($user) {
-            return in_array($user->role_id, [1, 2, 3]);
+            return in_array($user->role_id, [1]);
         });
 
         // Auth gates for: Files
