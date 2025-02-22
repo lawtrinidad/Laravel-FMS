@@ -8,7 +8,7 @@
         </span>
         <!-- Logo for regular state and mobile devices -->
         <span class="logo-lg" id="logo-lg">
-            <img src="{{ asset('images/logo.png') }}" alt="SINTAX" class="logo-img img-fluid" width="60" height="60">
+            <img src="{{ asset('images/logo.png') }}" alt="IskoLAr" class="logo-img img-fluid" width="60" height="60">
             <div id="logo-text">
                 <p class="ml-2">iskoLAr</p>
                 <p id="subtitle"> Iskolar Library and Archive</p>
