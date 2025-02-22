@@ -6,6 +6,10 @@ use App\User;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Mail\UserRegistered;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+
 
 
 class RegisterController extends Controller
@@ -65,6 +69,13 @@ class RegisterController extends Controller
         ]);
     }
 
+    // mail notification feature
+    protected function registered(Request $request, $user)
+    {
+        Mail::to($user->email)->send(new UserRegistered($user));
+    }
+
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -80,4 +91,10 @@ class RegisterController extends Controller
             'role_id' => config('quickadmin.default_role_id')
         ]);
     }
+
+
+
+
 }
+
+

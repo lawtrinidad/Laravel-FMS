@@ -25,6 +25,7 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('filename', trans('quickadmin.files.fields.filename').'*', ['class' => 'control-label']) !!}
+                    <p style="color: gray; font-size:12px;"> Filename should follow this format: filename.extension. If the filename has at least one word, separate using underscores.</p>
                     {!! Form::file('filename[]', [
                         'multiple',
                         'class' => 'form-control file-upload',
@@ -33,6 +34,7 @@
                         'data-filekey' => 'filename',
                         'id' => 'my_id'
                         ]) !!}
+                    <p style="color: gray; font-size:12px;"> File size is limited to 100MB</p>
                     <p class="help-block"></p>
                     <div class="photo-block">
                         <div class="progress-bar form-group">&nbsp;</div>

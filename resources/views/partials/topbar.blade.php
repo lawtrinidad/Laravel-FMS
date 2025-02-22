@@ -10,8 +10,8 @@
         <span class="logo-lg" id="logo-lg">
             <img src="{{ asset('images/logo.png') }}" alt="SINTAX" class="logo-img img-fluid" width="60" height="60">
             <div id="logo-text">
-                <p class="ml-2">SINTAX</p>
-                <p id="subtitle"> The Future of File Sharing at PUP</p>
+                <p class="ml-2">iskoLAr</p>
+                <p id="subtitle"> Iskolar Library and Archive</p>
             </div>
            
             </span> 
