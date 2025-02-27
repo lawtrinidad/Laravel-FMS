@@ -99,7 +99,7 @@ body {
 .content-wrapper,
 .right-side {
   min-height: 100%;
-  background-color: #ecf0f5;
+  background-color: #fafafa;
   z-index: 800;
 }
 .main-footer {
@@ -5090,6 +5090,7 @@ div.dataTables_length label {
 .content{
   background-color: #fafafa;
 }
+
 .nav-tabs>li>a {
   margin-right: 2px;
   line-height: 1.42857143;
@@ -5104,3 +5105,41 @@ div.dataTables_length label {
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
+
+/*Roles*/
+#role-search{
+  border-radius: 16px;
+}
+.search-container {
+  position: relative;
+  width: 100%;
+  border: none;
+}
+
+.search-input {
+  padding-right: 40px; /* Space for the icon */
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #FFD700; 
+    box-shadow: 0 0 2px #FFD700; 
+}
+
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FFD700;
+  z-index: 2;
+}
+.input-group .form-control {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 250px;
+  margin-bottom: 0;
+}
+
