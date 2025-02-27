@@ -3,22 +3,30 @@
 @section('content')
     <div class="d-flex justify-content-between align-items-center" style="position: relative;">
         <h3 class="page-title">@lang('quickadmin.roles.title')</h3>
-
-        <!-- Search Bar -->
-        <div class="search-container">
-            <input type="text" id="role-search" class="form-control" placeholder="Search Roles...">
-        </div>
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="input-group">
+                    <input type="text" id="role-search" class="form-control search-input" placeholder="Search Roles">
+                    <span class="search-icon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div>
+            </div>
     </div>
 
     <!-- Button Container -->
     <div class="button-container">
-        @can('role_create')
-            <a href="{{ route('admin.roles.create') }}" class="btn btn-success">+ Add New</a>
-        @endcan
         <button id="select-all" class="btn btn-outline-secondary">
             <input type="checkbox" id="select-all-checkbox"> Select All
         </button>
-        <button id="delete-selected" class="btn btn-outline-danger">X Delete Selected</button>
+        @can('role_create')
+            <a href="{{ route('admin.roles.create') }}" class="btn btn-success"><i class="fa fa-plus"></i>Add New</a>
+        @endcan
+
+        <button id="delete-selected" class="btn btn-outline-danger">
+            <i class="fa fa-trash"></i> Delete Selected
+        </button>
+
     </div>
 
     <div class="d-flex flex-wrap justify-content-start gap-3" id="role-list">
@@ -73,9 +81,10 @@
             font-size: 1rem;
             padding: 10px;
             border-radius: 5px;
-            border: 1px solid #ddd;
+            border: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
         }
-
+    
         /* Button container styling */
         .button-container {
             padding: 15px;
@@ -89,23 +98,33 @@
 
         .button-container .btn {
             color: white;
-            font-weight: bold;
+            font-weight:normal;
             border: none;
             display: flex;
             align-items: center;
             gap: 5px;
+            font-size: smaller;
         }
 
         .btn-success {
-            background-color: #28a745;
+            background-color: #FFD700;
+            color: #333333 !important;
+        }
+        .btn-success:hover{
+            background-color:rgb(2, 110, 116);
         }
 
         .btn-outline-secondary {
-            background-color: #6c757d;
+            background-color: transparent;
+            color: #333333 !important;
+            font-size: small !important;
+        }
+        .btn-outline-secondary:focus {
+            box-shadow: none;
         }
 
         .btn-outline-danger {
-            background-color: #dc3545;
+            background-color: #800000;
         }
 
         .d-flex {
