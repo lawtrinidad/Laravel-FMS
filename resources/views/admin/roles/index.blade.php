@@ -107,8 +107,8 @@
         }
 
         .btn-success {
-            background-color: #FFD700;
-            color: #333333 !important;
+            background-color: #f39c12;
+            color: #333333;
         }
         .btn-success:hover{
             background-color:rgb(2, 110, 116);
