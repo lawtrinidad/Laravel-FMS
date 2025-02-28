@@ -758,6 +758,7 @@ hr {
   .sidebar-mini.sidebar-collapse .sidebar-menu li.header {
     display: none !important;
     -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
   .sidebar-mini.sidebar-collapse .main-header .logo {
     width: 50px;
@@ -5064,7 +5065,6 @@ table.text-center th {
   font-size: large;
   font-weight: 500;
 }
-
 .panel-body {
   border-radius: 20px;
   padding: 20px;

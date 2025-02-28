@@ -35,7 +35,7 @@
             <div class="role-card shadow-sm rounded" data-role-title="{{ $role->title }}">
                 <div class="role-card-left">
                     <input type="checkbox" class="role-checkbox" data-role-id="{{ $role->id }}">
-                    <i class="fa fa-user"></i>
+                    <i id="userfa" class="fa fa-user"></i>
                 </div>
                 <div class="role-card-right">
                     <h5 class="role-title">{{ $role->title }}</h5>
@@ -111,16 +111,12 @@
             max-width: 300px;
             width: 100%;
         }
-
-        /* Flex container for title and search bar */
-
         .d-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative;
         }
-
         /* Styling for search bar */
         .search-container {
             position: absolute;
@@ -199,7 +195,6 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             
         }
-
         .role-card-left {
             background: transparent;
             padding: 16px;
@@ -217,7 +212,7 @@
             flex-grow: 1; /* Take up all available space */
             padding-right: 0; /* Remove padding on the right */
         }
-        .fa{
+        #userfa{
             margin-left:16px;
             font-size:1.7rem
         }
@@ -227,9 +222,6 @@
             margin-left: 12px;
             margin-top: 0 !important;
         }
-        
-
-
         /* Ensure checkbox inside "Select All" button is clickable */
         #select-all-checkbox {
             width: 16px;
