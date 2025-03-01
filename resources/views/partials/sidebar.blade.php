@@ -1,4 +1,8 @@
+@extends('partials.modal')
+
 @inject('request', 'Illuminate\Http\Request')
+
+
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -135,9 +139,11 @@
         <p>
             By using this service, you understood and agree to the 
             PUP Online Services 
-            <a href="#" class="sidebar-link">Terms of Use</a> 
-            and 
-            <a href="#" class="sidebar-link">Privacy Statement</a>.
+            <a href="#" 
+                                data-toggle="modal"
+                                data-target=".bd-example-modal-lg" 
+                                data-bs-target="#termsModal"
+                                style="text-decoration: underline; color:rgb(215, 144, 12);">Terms and Conditions</a>. 
         </p>
     </div>
 </aside>
