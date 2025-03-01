@@ -134,6 +134,8 @@ class FilesController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
+    }
+
     public function update(UpdateFilesRequest $request, $id)
     {
         if (!Gate::allows('file_edit')) {
