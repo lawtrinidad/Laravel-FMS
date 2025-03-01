@@ -22,11 +22,12 @@
             <div class="row">
                 @if (count($folders) > 0)
                     @foreach ($folders as $folder)
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="card folder-card mb-3">
-                                <div class="card-body d-flex flex-column justify-content-between">
+                                <div class="card-body d-flex align-items-center">
                                     <input type="checkbox" class="folder-checkbox" data-folder-id="{{ $folder->id }}">
-                                    <a href="{{ route('admin.folders.show', [$folder->id]) }}" class="folder-name">{{ $folder->name }}</a>
+                                    
+                                    <a href="{{ route('admin.folders.show', [$folder->id]) }}" class="folder-name"><svg xmlns="http://www.w3.org/2000/svg" width="24px" style="margin-right: 8px;" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 480H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H288c-10.1 0-19.6-4.7-25.6-12.8L243.2 57.6C231.1 41.5 212.1 32 192 32H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64z"/></svg>    {{ $folder->name }}</a>
                                     <div class="actions">
                                         @can('folder_edit')
                                             <a href="{{ route('admin.folders.edit', [$folder->id]) }}" class="btn btn-sm btn-info">Rename</a>
@@ -112,26 +113,27 @@
             .folder-card {
                 margin-bottom: 20px; /* This will ensure space between each card */
                 background-color: white; /* Set background color to white */
-                border-left: 30px solid #652331; /* Extend left border to cover the checkbox */
+                border-left: 30px solid rgb(255, 255, 255); /* Extend left border to cover the checkbox */
                 color: black; /* Set text color to black */
                 height: 80px; /* Set a slimmer height for folder card */
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
                 position: relative;
                 padding: 10px; /* Adjust padding */
-                border-radius: 15px; /* Make the edges rounder */
-                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1), inset 1px 1px 5px rgba(0, 0, 0, 0.15); /* Add shadow for emboss effect */
+                border-radius: 12px; /* Make the edges rounder */
+                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1); /* Add shadow for emboss effect */
+                width: 100%;
             }
 
             .folder-card a.folder-name {
+                display: flex;
+                align-items: center;
                 color: black; /* Ensure folder name text is black */
                 text-align: center; /* Center align folder name */
                 font-weight: bold;
-                position: absolute; /* Position the folder name */
-                top: 50%; /* Place the folder name at the vertical center */
-                left: 50%; /* Place the folder name at the horizontal center */
-                transform: translate(-50%, -50%); /* Fine-tune positioning to center it */
+                font-size: 18px;
                 width: 100%;
             }
 
