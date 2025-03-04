@@ -68,4 +68,4 @@ Route::get('/file/preview/{id}', function ($id) {
         'Content-Type' => $media->mime_type,
         'Content-Disposition' => 'inline', // Ensures it opens correctly in browser
     ]);
-})->name('file.preview');
+})->name('file.preview'); 
