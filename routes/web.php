@@ -44,7 +44,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
 
 
- 
+
 });
 
 use Illuminate\Support\Facades\Route;
