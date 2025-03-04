@@ -29,7 +29,7 @@
                                     <a href="{{ route('admin.folders.show', [$folder->id]) }}" class="folder-name">{{ $folder->name }}</a>
                                     <div class="actions">
                                         @can('folder_edit')
-                                            <a href="{{ route('admin.folders.edit', [$folder->id]) }}" class="btn btn-sm btn-info">Edit</a>
+                                            <a href="{{ route('admin.folders.edit', [$folder->id]) }}" class="btn btn-sm btn-info">Rename</a>
                                         @endcan
                                         @can('folder_delete')
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['admin.folders.destroy', $folder->id], 'style' => 'display:inline']) !!}
@@ -153,6 +153,9 @@
                 left: 10px;
                 z-index: 2;
                 margin-left: -30px; /* Move the checkbox further to the left */
+            }
+            .folder-card .actions button {
+                z-index: 3;
             }
         `;
         document.head.appendChild(style);
