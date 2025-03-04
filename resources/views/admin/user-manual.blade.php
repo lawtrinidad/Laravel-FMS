@@ -9,7 +9,7 @@
         <hr class="my-4" style="height: 2px; background-color: gray; width: 100%">
 
         <!-- Section 1: Dashboard -->
-        <h2 class="section"><strong>Section 1: Dashboard</strong></h2>
+        <h2 class="text-xl font-bold border-b border-maroon-400 pb-2 text-left">Section 1: Dashboard</h2>
         
         <p class="text-gray-700 mt-4 max-w-2xl text-left">
             The Dashboard is the main area where you can monitor your current status on the site. Upon logging in, you’ll see your account details such as your Name, Email, and Role. 
@@ -30,13 +30,12 @@
 
         <!-- Centered Image -->
         <div class="mt-6 text-center">
-            <img src="{{ asset('images/dashboard.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
-            </div>
-            <br>
-
+            <img src="{{ asset('images/user-manual.png') }}" 
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
+        </div>
+        <br>
 
         <!-- Features List -->
         <div class="mt-8">
@@ -64,9 +63,9 @@
             </p>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/rolesusers.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 400px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 400px; height: auto;">
         </div>
         <br>
 
@@ -85,25 +84,25 @@
                 <span class="font-bold text-xl mr-2">⑤</span> <strong>View Role</strong>: View detailed information about a specific role. <br>
                 <div class="mt-6 text-center">
             <img src="{{ asset('images/roles-view.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
                 <span class="font-bold text-xl mr-2">⑥</span> <strong>Edit Role</strong>: Modify the permissions of a role as necessary.<br>
                 <div class="mt-6 text-center">
             <img src="{{ asset('images/roles-edit.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
                 <span class="font-bold text-xl mr-2">⑦</span> <strong>Delete Role</strong>: Remove the role from the system permanently. A confirmation modal will appear before proceeding.<br>
                 <div class="mt-6 text-center">
             <img src="{{ asset('images/roles-delete.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 500px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 500px; height: auto;">
             </div>
             <br>
             </ul>
@@ -116,9 +115,9 @@
             </p>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/users.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
             <ul class="mt-6 space-y-2 text-gray-800 text-left">
@@ -148,9 +147,9 @@
         </p>
         <div class="mt-6 text-center">
             <img src="{{ asset('images/folder.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 700px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 700px; height: auto;">
             </div>
             <br>
 
@@ -158,33 +157,33 @@
             <span class="font-bold text-xl mr-2">①</span>  <strong>Search Folder </strong>: Quickly search for folders by name to find the one you're looking for.<br>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/Folder search.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 450px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 450px; height: auto;">
             </div>
             <br>
             <span class="font-bold text-xl mr-2">②</span>  <strong>Edit Folder</strong>: If needed, you can rename a folder using the <strong>Edit</strong> function.<br>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/folder edit.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 450px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 450px; height: auto;">
             </div>
             <br>
             <span class="font-bold text-xl mr-2">③</span>  <strong>Delete Folder</strong>: If a folder is no longer needed, you can delete it permanently. A confirmation modal will appear before proceeding.<br><br>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/folder delete.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 450px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 450px; height: auto;">
             </div>
             <br>
             <span class="font-bold text-xl mr-2">④</span>  <strong>Add New Folder</strong>: Click on the <strong>Add New</strong> button to create a new folder for more organized archiving.<br>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/folder add.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 250px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 250px; height: auto;">
             </div>
             <br>
         </ul>
@@ -201,27 +200,27 @@
             <span class="font-bold text-xl mr-2">①</span> <strong>View Files</strong>: The list of all uploaded files is displayed with their filename, folder, date, and the user who uploaded them.<br>
                         <div class="mt-6 text-center">
             <img src="{{ asset('images/files1.JPG') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
         </ul>
             <span class="font-bold text-xl mr-2">②</span> <strong>Add New File</strong>: Use the <strong>Add New</strong> button to upload a new file to the system.<br>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/files2.JPG') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 700px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 700px; height: auto;">
             </div>
             <br>
         </ul>
             <span class="font-bold text-xl mr-2">③</span> <strong>Delete File</strong>: Select files and use the <strong>Delete</strong> button to remove them. You can delete multiple files at once.<br>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/files3.JPG') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
         </ul>
@@ -240,9 +239,9 @@
         <ul class="mt-6 space-y-2 text-gray-800 text-left">
         <div class="mt-6 text-center">
             <img src="{{ asset('images/TRASH1.JPG') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
             <span class="font-bold text-xl mr-2">①</span> <strong>Deleted Files</strong>: View files that have been deleted. You can restore them if needed.<br>
@@ -260,9 +259,9 @@
         <h3 class="text-lg font-semibold text-left mt-4"><strong>1. About</strong></h3>
         <div class="mt-6 text-center">
             <img src="{{ asset('images/about about.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
         <p class="text-gray-700 mt-4 max-w-2xl text-left">
@@ -276,9 +275,9 @@
             <br><br>
             <div class="mt-6 text-center">
             <img src="{{ asset('images/about creators.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
             <strong>Project Creators and Roles:</strong>
@@ -306,9 +305,9 @@
         </p>
         <div class="mt-6 text-center">
             <img src="{{ asset('images/changepass.png') }}" 
-                 alt="User Manual" 
-                 class="rounded-lg shadow-md object-contain"
-                 style="width: 800px; height: auto;">
+                alt="User Manual" 
+                class="rounded-lg shadow-md object-contain"
+                style="width: 800px; height: auto;">
             </div>
             <br>
         </ul>

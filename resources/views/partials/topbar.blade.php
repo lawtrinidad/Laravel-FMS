@@ -11,9 +11,9 @@
             <img src="{{ asset('images/logo.png') }}" alt="IskoLAr" class="logo-img img-fluid" width="60" height="60">
             <div id="logo-text">
                 <p class="ml-2">iskoLAr</p>
-                <p id="subtitle"> Iskolar Library and Archive</p>
+                <p id="subtitle"> The Future of File Sharing at PUP</p>
             </div>
-           
+
             </span> 
     </a>
     <!-- Header Navbar: style can be found in header.less -->

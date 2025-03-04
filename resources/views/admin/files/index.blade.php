@@ -68,9 +68,8 @@
                             <td field-key='filename'>
                                 @foreach($file->getMedia('filename') as $media)
                                     <p class="form-group">
-                                        <a href="{{ asset('storage/' . $media->id . '/' . $media->file_name) }}" target="_blank">
-                                            {{ $media->file_name }} ({{ $media->size }} KB)
-                                        </a>
+                                    <a href="{{ route('file.preview', ['id' => $media->id]) }}" target="_blank">
+                                    {{ $media->file_name }} ({{ $media->size }} KB)
                                     </p>
                                 @endforeach
                             </td>

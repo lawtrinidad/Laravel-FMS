@@ -101,12 +101,12 @@
         }
         #jusqpo {
             text-align: justify;
-           
+        
         }
         #kratur {
             margin: auto;
             width: 70%;
-       
+
         }
         #ender{
             margin-top: 50px;
