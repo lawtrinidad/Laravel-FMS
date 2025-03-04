@@ -67,7 +67,8 @@
                             @endcan
                             <td field-key='filename'> @foreach($file->getMedia('filename') as $media)
                                     <p class="form-group">
-                                        <a href="{{url('/admin/' . $file->uuid . '/download')}}" target="_blank">{{ $media->name }} ({{ $media->size }} KB)</a>
+                                    <a href="{{ route('file.preview', ['id' => $media->id]) }}" target="_blank">
+                                    {{ $media->file_name }} ({{ $media->size }} KB)
                                     </p>
                                 @endforeach</td>
                             <td field-key='folder'>{{ $file->folder->name }}</td>

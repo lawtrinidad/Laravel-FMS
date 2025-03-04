@@ -46,3 +46,26 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
  
 });
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Response;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
+Route::get('/file/preview/{id}', function ($id) {
+    $media = Media::findOrFail($id);  // Fetch media from DB
+
+    if (!$media) {
+        abort(404, 'File not found.');
+    }
+
+    $path = $media->getPath(); // Get actual file path
+
+    if (!file_exists($path)) {
+        abort(404);
+    }
+
+    return Response::file($path, [
+        'Content-Type' => $media->mime_type,
+        'Content-Disposition' => 'inline', // Ensures it opens correctly in browser
+    ]);
+})->name('file.preview');
