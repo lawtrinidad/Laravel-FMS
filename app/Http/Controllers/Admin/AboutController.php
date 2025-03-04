@@ -18,7 +18,7 @@ class AboutController extends Controller
             ['name' => 'Trisha Camille Galicia', 'role' => 'Full-Stack Developer', 'img_src' => 'images/trisha.png'],
             ['name' => 'Jermaine Jade De Guzman', 'role' => 'UI/UX Designer/Full-Stack Developer', 'img_src' => 'images/jeydi.jpg'],
             ['name' => 'Miguel Alfonso Neri', 'role' => 'Logic Engineer/Developer', 'img_src' => 'images/migs.jpg'],
-            ['name' => 'Juan Miguel Gamo', 'role' => 'Logic Engineer', 'img_src' => 'images\juanny.jpg'],
+            ['name' => 'Juan Miguel Gamo', 'role' => 'Logic Engineer', 'img_src' => 'images/juanny.jpg'],
             ['name' => 'Jiro Ivan Ybanez', 'role' => 'Logic Engineer/Certified latina', 'img_src' => 'images/jiro.jpg']
         ];
 
