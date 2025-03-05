@@ -13,7 +13,7 @@
                 <p class="ml-2">iskoLAr</p>
                 <p id="subtitle"> The Future of File Sharing at PUP</p>
             </div>
-           
+        
             </span> 
     </a>
     <!-- Header Navbar: style can be found in header.less -->
