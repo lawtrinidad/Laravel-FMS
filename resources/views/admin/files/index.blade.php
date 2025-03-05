@@ -44,7 +44,7 @@
                             <th style="text-align:center;"><input type="checkbox" id="select-all"/></th>@endif
                     @endcan
 
-                    <th>Filename</th>
+                    <th>File Name</th>
                     <th>Folder</th>
                     <th>Date Created</th>
                     <th>Created by</th>
