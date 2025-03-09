@@ -15,7 +15,40 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            @lang('quickadmin.qa_view')
+            Activity
+        </div>
+
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Action</th>
+                        <th>Entity Type</th>
+                        <th>Entity Name</th>
+                        <th>Previous Name</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($activities as $activity)
+                    <tr>
+                        <td>{{ $activity->user->name ?? 'System' }}</td>
+                        <td>{{ ucfirst($activity->action) }}</td>
+                        <td>{{ ucfirst($activity->entity_type) }}</td>
+                        <td>{{ $activity->entity_name }}</td>
+                        <td>{{ $activity->previous_name ?? 'N/A' }}</td>
+                        <td>{{ $activity->created_at->format('Y-m-d H:i:s') }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Your Profile
         </div>
 
         <div class="panel-body table-responsive">

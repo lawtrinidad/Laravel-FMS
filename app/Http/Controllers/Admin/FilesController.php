@@ -13,6 +13,10 @@ use App\Http\Requests\Admin\UpdateFilesRequest;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use Illuminate\Support\Facades\Session;
 use Faker\Provider\Uuid;
+use App\Services\ActivityLogService;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
+
 
 class FilesController extends Controller
 {
@@ -85,27 +89,33 @@ class FilesController extends Controller
             return abort(401);
         }
         
-            $request = $this->saveFiles($request);
+        $request = $this->saveFiles($request);
 
-            $data = $request->all();
-            $fileIds = $request->input('filename_id');
+        $data = $request->all();
+        $fileIds = $request->input('filename_id');
 
-            foreach ($fileIds as $fileId) {
-                $file = File::create([
-                    'id' => $fileId,
-                    'uuid' => (string)\Webpatser\Uuid\Uuid::generate(),
-                    'folder_id' => $request->input('folder_id'),
-                    'created_by_id' => Auth::getUser()->id
+        foreach ($fileIds as $fileId) {
+            $file = File::create([
+                'id' => $fileId,
+                'uuid' => (string)\Webpatser\Uuid\Uuid::generate(),
+                'folder_id' => $request->input('folder_id'),
+                'created_by_id' => Auth::getUser()->id
 
-                ]);
-            }
+            ]);
+        }
 
-            foreach ($request->input('filename_id', []) as $index => $id) {
-                $model = config('media-library.media_model');
-                $file = $model::find($id);
-                $file->model_id = $file->id;
-                $file->save();
-            }
+        foreach ($request->input('filename_id', []) as $index => $id) {
+            $model = config('media-library.media_model');
+            $file = $model::find($id);
+            $file->model_id = $file->id;
+            $file->save();
+
+            $mediaFile = Media::find($id);
+            $fileName = $mediaFile ? $mediaFile->file_name : 'Unknown File';
+
+            ActivityLogService::log('created', 'file', $fileName);
+        }
+
             return redirect()->route('admin.files.index');
 
     }
@@ -146,6 +156,7 @@ class FilesController extends Controller
         $file->updateMedia($media, 'filename');
 
         return redirect()->route('admin.files.index');
+
     }
 
 
