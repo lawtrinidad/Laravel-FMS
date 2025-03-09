@@ -495,16 +495,14 @@ hr {
   text-align: center;
   font-family: Inter;
   font-style: normal;
-  font-size: 16;
   font-weight: 300;
   padding: 10px;
-  font-size: 12px;
+  font-size: 10px;
   color: #fff; /* Text color */
   background-color: transparent; /* Background similar to the image */
   position: absolute;
   bottom: 0;
-  width: 90%;
-
+  margin-inline: 8px;
 }
 
 .sidebar-footer a {
