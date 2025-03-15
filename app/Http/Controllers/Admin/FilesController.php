@@ -13,7 +13,9 @@ use App\Http\Requests\Admin\UpdateFilesRequest;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use Illuminate\Support\Facades\Session;
 use Faker\Provider\Uuid;
-use Illuminate\Support\Facades\Storage;
+use App\Services\ActivityLogService;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
+
 
 
 class FilesController extends Controller
@@ -44,9 +46,7 @@ class FilesController extends Controller
             }
             $files = File::onlyTrashed()->get();
         } else {
-            
-        $files = File::latest()->get();
-
+            $files = File::all();
         }
         $user = Auth::getUser();
         $userFilesCount = File::where('created_by_id', $user->id)->count();
@@ -88,7 +88,7 @@ class FilesController extends Controller
         if (!Gate::allows('file_create')) {
             return abort(401);
         }
-
+        
         $request = $this->saveFiles($request);
 
         $data = $request->all();
@@ -100,26 +100,27 @@ class FilesController extends Controller
                 'uuid' => (string)\Webpatser\Uuid\Uuid::generate(),
                 'folder_id' => $request->input('folder_id'),
                 'created_by_id' => Auth::getUser()->id
-            ]);
 
-            // Ensure the file is saved and updated
-            $file->refresh();
+            ]);
         }
 
         foreach ($request->input('filename_id', []) as $index => $id) {
             $model = config('media-library.media_model');
             $file = $model::find($id);
-            if ($file) {
-                $file->model_id = $file->id;
-                $file->save();
-            }
-            return redirect()->route('admin.files.index')->with('success', 'File uploaded successfully.');
+            $file->model_id = $file->id;
+            $file->save();
 
-        // Small delay to allow DB transactions to complete
-        sleep(2);
+            $mediaFile = Media::find($id);
+            $fileName = $mediaFile ? $mediaFile->file_name : 'Unknown File';
 
-        return redirect()->route('admin.files.index')->with('status', 'File uploaded successfully!');
+            ActivityLogService::log('created', 'file', $fileName);
+        }
+
+            return redirect()->route('admin.files.index');
+
     }
+
+
     /**
      * Show the form for editing File.
      *
@@ -134,8 +135,6 @@ class FilesController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    }
-
     public function update(UpdateFilesRequest $request, $id)
     {
         if (!Gate::allows('file_edit')) {
@@ -157,8 +156,9 @@ class FilesController extends Controller
         $file->updateMedia($media, 'filename');
 
         return redirect()->route('admin.files.index');
+
     }
-    
+
 
     /**
      * Display File.

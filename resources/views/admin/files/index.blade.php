@@ -65,17 +65,12 @@
                                 @if ( request('show_deleted') != 1 )
                                     <td></td>@endif
                             @endcan
-                            <td field-key='filename'>
-                                @foreach($file->getMedia('filename') as $media)
+                            <td field-key='filename'> @foreach($file->getMedia('filename') as $media)
                                     <p class="form-group">
-                                        <a href="{{ asset('storage/' . $media->id . '/' . $media->file_name) }}" target="_blank">
-                                            {{ $media->file_name }} ({{ $media->size }} KB)
-                                        </a>
+                                    <a href="{{ route('file.preview', ['id' => $media->id]) }}" target="_blank">
+                                    {{ $media->file_name }} ({{ $media->size }} KB)
                                     </p>
-                                @endforeach
-                            </td>
-
-
+                                @endforeach</td>
                             <td field-key='folder'>{{ $file->folder->name }}</td>
                             <td field-key='created_on'>{{ $file->created_at->format('h:i A, M/d/Y') }}</td>
                             <td field-key='created_by'>{{ $file->created_by->name }}</td>

@@ -4,16 +4,16 @@
     <a href="{{ url('/admin/home') }}" class="logo" id="logo">
         <!-- Mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"> <!-- Display only on small screens -->
-            <img src="{{ asset('images/logo.png') }}" alt="SINTAX"  width="50" height="50">
+            <img src="{{ asset('images/logo.png') }}" alt="Iskolar"  width="32" height="32">
         </span>
         <!-- Logo for regular state and mobile devices -->
         <span class="logo-lg" id="logo-lg">
-            <img src="{{ asset('images/logo.png') }}" alt="IskoLAr" class="logo-img img-fluid" width="60" height="60">
+            <img src="{{ asset('images/logo.png') }}" alt="IskoLAr" class="logo-img img-fluid" width="48" height="48">
             <div id="logo-text">
-                <p class="ml-2">iskoLAr</p>
-                <p id="subtitle"> Iskolar Library and Archive</p>
+                <p class="">iskoLAr</p>
+                <p id="subtitle"> The Future of File Sharing at PUP</p>
             </div>
-           
+        
             </span> 
     </a>
     <!-- Header Navbar: style can be found in header.less -->
