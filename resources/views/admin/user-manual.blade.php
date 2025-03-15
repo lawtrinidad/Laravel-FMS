@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="content-container" style="min-height: 100vh; display: flex; flex-direction: column;">
+<div class="content-container" style="min-height: inherit; display: flex; flex-direction: column;">
     <div class="container mt-5" style="font-family: 'Raleway', sans-serif; overflow-y: auto; scrollbar-color: maroon white; flex-grow: 1;">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="fw-bold">User Manual of IskoLAr</h2>
