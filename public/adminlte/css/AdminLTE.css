@@ -146,11 +146,7 @@ body.hold-transition .main-header .logo {
 }
 /* Content */
 .content {
-<<<<<<< HEAD
   min-height: inherit;
-=======
-  min-height: 250px;
->>>>>>> parent of 96aae66 (Fixed content container bug)
   margin-right: auto;
   margin-left: auto;
   background-color: #fafafa;
