@@ -5136,3 +5136,9 @@ div.dataTables_length label {
   margin-bottom: 0;
 }
 
+.pagination .page-item.active .page-link {
+  background-color: #d59112 !important; /* Change to your preferred color */
+  border-color: #d59112 !important;
+  color: white !important;
+}
+

@@ -43,6 +43,11 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <div class="text-center" style="margin: -20px 0;">
+                {{ $activities->links('pagination::bootstrap-4') }}
+            </div>
+
         </div>
     </div>
 
