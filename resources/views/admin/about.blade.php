@@ -82,8 +82,11 @@
 
         /* Ensure only content inside the main section is scrollable */
         .content-container {
-            position: relative; /* Allows it to expand dynamically */
-            min-height: 100vh;  /* Ensures it covers at least full viewport height */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             overflow-y: auto;
             padding: 20px;
         }
