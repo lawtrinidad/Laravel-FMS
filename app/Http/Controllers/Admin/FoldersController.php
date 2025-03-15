@@ -12,6 +12,7 @@ use App\Http\Requests\Admin\StoreFoldersRequest;
 use App\Http\Requests\Admin\UpdateFoldersRequest;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request as NRequest;
+use App\Services\ActivityLogService;
 
 
 class FoldersController extends Controller
@@ -75,7 +76,9 @@ class FoldersController extends Controller
         }
         $folder = Folder::create($request->all());
 
-
+        $folderName = $folder->name;
+        
+        ActivityLogService::log('created', 'folder', $folderName);
 
         return redirect()->route('admin.folders.index');
     }
@@ -113,11 +116,18 @@ class FoldersController extends Controller
             return abort(401);
         }
         $folder = Folder::findOrFail($id);
+
+        $oldName = $folder->name;
+
         $folder->update($request->all());
 
+        $newName = $folder->name;
 
-
-        return redirect()->route('admin.folders.index');
+        if ($oldName !== $newName) {
+            ActivityLogService::log('renamed', 'folder', $newName, $oldName);
+        }
+    
+        return redirect()->route('admin.folders.index')->with('success', 'Folder updated successfully!');
     }
 
 
