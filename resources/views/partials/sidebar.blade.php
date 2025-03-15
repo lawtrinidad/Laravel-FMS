@@ -1,11 +1,13 @@
+@extends('partials.modal')
+
 @inject('request', 'Illuminate\Http\Request')
+
+
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <ul class="sidebar-menu">
-
-             
 
             <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
                 <a href="{{ url('/') }}">
@@ -14,7 +16,6 @@
                 </a>
             </li>
 
-            
             @can('user_management_access')
             <li class="treeview">
                 <a href="#">
@@ -25,27 +26,22 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                
-                @can('role_access')
-                <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
+                    @can('role_access')
+                    <li class="{{ $request->segment(2) == 'roles' ? 'active active-sub' : '' }}">
                         <a href="{{ route('admin.roles.index') }}">
                             <i class="fa fa-briefcase"></i>
-                            <span class="title">
-                                @lang('quickadmin.roles.title')
-                            </span>
+                            <span class="title">@lang('quickadmin.roles.title')</span>
                         </a>
                     </li>
-                @endcan
-                @can('user_access')
-                <li class="{{ $request->segment(2) == 'users' ? 'active active-sub' : '' }}">
+                    @endcan
+                    @can('user_access')
+                    <li class="{{ $request->segment(2) == 'users' ? 'active active-sub' : '' }}">
                         <a href="{{ route('admin.users.index') }}">
                             <i class="fa fa-user"></i>
-                            <span class="title">
-                                @lang('quickadmin.users.title')
-                            </span>
+                            <span class="title">@lang('quickadmin.users.title')</span>
                         </a>
                     </li>
-                @endcan
+                    @endcan
                 </ul>
             </li>
             @endcan
@@ -60,7 +56,7 @@
                 </a>
             </li>
             @endcan
-            
+
             @can('file_access')
             <li class="{{ $request->segment(2) == 'files' ? 'active' : '' }}">
                 <a href="{{ route('admin.files.index') }}">
@@ -69,15 +65,6 @@
                 </a>
             </li>
             @endcan
-
-            {{-- @can('plan_access')
-            <li class="{{ $request->segment(2) == 'subscriptions' ? 'active' : '' }}">
-                <a href="{{ route('admin.subscriptions.index') }}">
-                    <i class="fa fa-credit-card"></i>
-                    <span class="title">My Plan</span>
-                </a>
-            </li>
-            @endcan --}}
 
             <li class="treeview">
                 <a href="#">
@@ -88,27 +75,49 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                
-                <li class="{{ $request->segment(2) == 'trash-files' ? 'active active-sub' : '' }}">
-                        <a href="http://127.0.0.1:8000/admin/files?show_deleted=1">
+                    <li class="{{ $request->segment(2) == 'trash-files' ? 'active active-sub' : '' }}">
+                        <a href="{{ url('/admin/files?show_deleted=1') }}">
                             <i class="fa fa-minus"></i>
-                            <span class="title">
-                                Deleted Files
-                            </span>
+                            <span class="title">Deleted Files</span>
                         </a>
                     </li>
-        
-                <li class="{{ $request->segment(2) == 'trash-folder' ? 'active active-sub' : '' }}">
-                        <a href="http://127.0.0.1:8000/admin/folders?show_deleted=1">
+                    <li class="{{ $request->segment(2) == 'trash-folder' ? 'active active-sub' : '' }}">
+                        <a href="{{ url('/admin/folders?show_deleted=1') }}">
                             <i class="fa fa-eraser"></i>
-                            <span class="title">
-                               Deleted Folders
-                            </span>
+                            <span class="title">Deleted Folders</span>
                         </a>
                     </li>
                 </ul>
+            </li>
 
-                <hr>
+            <hr>
+
+            <!-- Information Section -->
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-info-circle"></i>
+                    <span class="title">Information</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ $request->segment(2) == 'about' ? 'active active-sub' : '' }}">
+                        <a href="{{ url('/admin/about') }}">
+                            <i class="fa fa-info"></i>
+                            <span class="title">About</span>
+                        </a>
+                    </li>
+                    <li class="{{ $request->segment(2) == 'user-manual' ? 'active active-sub' : '' }}">
+                        <a href="{{ url('/admin/user-manual') }}">
+                            <i class="fa fa-book"></i>
+                            <span class="title">User Manual</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <hr>
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">
@@ -130,10 +139,11 @@
         <p>
             By using this service, you understood and agree to the 
             PUP Online Services 
-            <a href="#" class="sidebar-link">Terms of Use</a> 
-            and 
-            <a href="#" class="sidebar-link">Privacy Statement</a>.
+            <a href="#" 
+                                data-toggle="modal"
+                                data-target=".bd-example-modal-lg" 
+                                data-bs-target="#termsModal"
+                                style="text-decoration: underline; color:rgb(215, 144, 12);">Terms and Conditions</a>. 
         </p>
     </div>
 </aside>
-

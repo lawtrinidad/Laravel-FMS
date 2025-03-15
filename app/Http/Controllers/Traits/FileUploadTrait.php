@@ -27,7 +27,10 @@ trait FileUploadTrait
             if ($request->hasFile($key)) {
                 if ($request->has($key . '_max_width') && $request->has($key . '_max_height')) {
                     // Check file width
-                    $filename = time() . '-' . $request->file($key)->getClientOriginalName();
+                    $officeName = 'OFFICENAME'; // Replace with dynamic office name if available
+                    $date = strtoupper(date('MY'));
+                    $originalName = $request->file($key)->getClientOriginalName();
+                    $filename = $officeName . '_' . $date . '_' . $originalName;
                     $file     = $request->file($key);
                     $image    = Image::make($file);
                     if (! file_exists($thumbPath)) {
@@ -50,7 +53,10 @@ trait FileUploadTrait
                     $image->save($uploadPath . '/' . $filename);
                     $finalRequest = new Request(array_merge($finalRequest->all(), [$key => $filename]));
                 } else {
-                    $filename = time() . '-' . $request->file($key)->getClientOriginalName();
+                    $officeName = 'OFFICENAME'; // Replace with dynamic value if needed
+                    $date = strtoupper(date('MY'));
+                    $originalName = $request->file($key)->getClientOriginalName();
+$filename = $officeName . '_' . $date . '_' . $originalName;
                     $request->file($key)->move($uploadPath, $filename);
                     $finalRequest = new Request(array_merge($finalRequest->all(), [$key => $filename]));
                 }

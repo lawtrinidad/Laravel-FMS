@@ -15,7 +15,7 @@
                             <span class="text-welcome">Welcome to</span>
                         </div>
                         <div class="text-block text-black">
-                            <p class="text-sintax">IskoLAr</p>
+                            <p class="text-sintax">iskoLAr</p>
                         </div>
                             <p class="text-sinta">Iskolar Library and Archive</p>
                     </div>     
