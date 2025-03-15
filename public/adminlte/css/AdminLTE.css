@@ -146,7 +146,7 @@ body.hold-transition .main-header .logo {
 }
 /* Content */
 .content {
-  min-height: 100vh;
+  min-height: inherit;
   margin-right: auto;
   margin-left: auto;
   background-color: #fafafa;
